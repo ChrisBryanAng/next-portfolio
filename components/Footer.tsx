@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import Logo from "@/public/logo.svg";
 import GithubLogo from "@/public/icons/github.svg";
@@ -6,7 +7,11 @@ import TwitterLogo from "@/public/icons/twitter.svg";
 import LinkedinLogo from "@/public/icons/linkedin.svg";
 
 const Footer = () => {
-  const links = ["Home", "Portfolio", "Contact Me"];
+  const links = [
+    { label: "Home", url: "/" },
+    { label: "Portfolio", url: "/portfolio" },
+    { label: "Contact Me", url: "/contact" },
+  ];
 
   return (
     <div className="flex flex-col md:flex-row bg-primary-grayishdarkblue justify-center md:justify-between md:px-9 lg:px-44 items-center mt-24 space-y-16 md:space-y-0 py-16 md:py-8 text-white">
@@ -16,13 +21,13 @@ const Footer = () => {
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center gap-10">
           {links.map((link, idx) => (
-            <button
+            <Link
               key={idx}
-              type="button"
+              href={link.url}
               className="text-white uppercase tracking-[3px] md:text-[12px] text-center"
             >
-              {link}
-            </button>
+              {link.label}
+            </Link>
           ))}
         </div>
       </div>

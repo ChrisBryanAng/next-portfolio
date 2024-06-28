@@ -1,35 +1,66 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import Logo from "@/public/logo.svg";
 import HamburgerIcon from "@/public/icons/hamburger.svg";
+import CloseIcon from "@/public/icons/close.svg";
+import NavDropdown from "./NavDropdown";
 
 const Navbar = () => {
-  const links = ["Home", "Portfolio", "Contact Me"];
+  const [isOpen, setIsOpen] = useState(false);
+  const links = [
+    { label: "Home", url: "/" },
+    { label: "Portfolio", url: "/portfolio" },
+    { label: "Contact Me", url: "/contact" },
+  ];
+
+  const handleNavOpen = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <div className="flex justify-between items-center md:mt-8">
-      <div>
+    <div className="relative flex justify-between items-center md:mt-8">
+      <Link href="/">
         <Image
           src={Logo}
           alt="logo"
-          className="h-[52px] w-[100px] md:h-[42px] md:w-[80px] cursor-pointer"
+          className="h-[44px] w-[80px] md:h-[42px] md:w-[80px] cursor-pointer"
         />
-      </div>
+      </Link>
       <div className="hidden md:flex space-x-6 md:space-x-14">
         {links.map((link, idx) => (
-          <button
+          <Link
             key={idx}
-            type="button"
+            href={link.url}
             className={`font-Public-sans text-[12px] md:text-[14px] tracking-[2px] uppercase text-black`}
           >
-            {link}
-          </button>
+            {link.label}
+          </Link>
         ))}
       </div>
 
-      <div className="flex md:hidden cursor-pointer">
-        <Image src={HamburgerIcon} alt="hamburger-icon" className="h-5 w-9" />
+      <div className="relative flex md:hidden cursor-pointer">
+        {isOpen ? (
+          <Image
+            src={CloseIcon}
+            alt="hamburger-icon"
+            onClick={handleNavOpen}
+            className="h-7 w-7"
+          />
+        ) : (
+          <Image
+            src={HamburgerIcon}
+            alt="close-icon"
+            onClick={handleNavOpen}
+            className="h-5 w-9"
+          />
+        )}
       </div>
+
+      {isOpen && <NavDropdown />}
     </div>
   );
 };
