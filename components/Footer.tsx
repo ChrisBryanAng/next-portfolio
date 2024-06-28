@@ -9,7 +9,7 @@ const Footer = () => {
   const links = ["Home", "Portfolio", "Contact Me"];
 
   return (
-    <div className="flex flex-col md:flex-row bg-primary-grayishdarkblue justify-center md:justify-between md:px-9 items-center mt-24 space-y-16 md:space-y-0 py-16 md:py-8 text-white">
+    <div className="flex flex-col md:flex-row bg-primary-grayishdarkblue justify-center md:justify-between md:px-9 lg:px-44 items-center mt-24 space-y-16 md:space-y-0 py-16 md:py-8 text-white">
       <div className="flex flex-col md:flex-row gap-12">
         <div className="flex justify-center items-center w-full md:w-max invert">
           <Image src={Logo} alt="logo" className="h-11 md:h-9 w-20 md:w-16" />

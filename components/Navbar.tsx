@@ -17,12 +17,13 @@ const Navbar = () => {
       </div>
       <div className="hidden md:flex space-x-6 md:space-x-14">
         {links.map((link, idx) => (
-          <div
+          <button
             key={idx}
+            type="button"
             className={`font-Public-sans text-[12px] md:text-[14px] tracking-[2px] uppercase text-black`}
           >
             {link}
-          </div>
+          </button>
         ))}
       </div>
 
