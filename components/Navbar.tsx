@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,6 +11,7 @@ import CloseIcon from "@/public/icons/close.svg";
 import NavDropdown from "./NavDropdown";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const links = [
     { label: "Home", url: "/" },
@@ -35,7 +37,9 @@ const Navbar = () => {
           <Link
             key={idx}
             href={link.url}
-            className={`font-Public-sans text-[12px] md:text-[14px] tracking-[2px] uppercase text-black`}
+            className={`font-Public-sans text-[12px] md:text-[14px] tracking-[2px] uppercase ${
+              pathname === link.url ? "text-primary-cyan" : "text-black"
+            }`}
           >
             {link.label}
           </Link>
@@ -60,7 +64,7 @@ const Navbar = () => {
         )}
       </div>
 
-      {isOpen && <NavDropdown />}
+      {isOpen && <NavDropdown pathname={pathname} />}
     </div>
   );
 };

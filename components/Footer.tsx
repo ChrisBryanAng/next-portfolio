@@ -24,7 +24,7 @@ const Footer = () => {
             <Link
               key={idx}
               href={link.url}
-              className="text-white uppercase tracking-[3px] md:text-[12px] text-center"
+              className="text-white uppercase tracking-[3px] text-[15px] md:text-[12px] text-center"
             >
               {link.label}
             </Link>

@@ -1,11 +1,13 @@
-const PrimaryButtonClean = ({ label }: { label: string }) => {
+import Link from "next/link";
+
+const PrimaryButtonClean = ({ label, url }: { label: string; url: string }) => {
   return (
-    <button
-      type="button"
-      className="py-4 px-10 border-[1px] font-Public-sans font-light border-solid border-black flex justify-center items-center text-nowrap uppercase tracking-widest w-max"
+    <Link
+      href={`${url}`}
+      className="text-[14px] py-4 px-10 hover:bg-primary-grayishdarkblue hover:text-secondary-verylightgray transition-colors duration-200 border-[1px] font-Public-sans font-light border-solid border-black flex justify-center items-center text-nowrap uppercase tracking-widest w-max"
     >
       {label}
-    </button>
+    </Link>
   );
 };
 

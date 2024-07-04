@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const NavDropdown = () => {
+const NavDropdown = ({ pathname }: { pathname: string }) => {
   const links = [
     { label: "Home", url: "/" },
     { label: "Portfolio", url: "/portfolio" },
@@ -14,7 +14,9 @@ const NavDropdown = () => {
           <Link
             key={idx}
             href={link.url}
-            className="text-white uppercase tracking-[3px] text-[12px] text-center"
+            className={`${
+              pathname === link.url ? "text-primary-cyan" : "text-white"
+            } uppercase tracking-[3px] text-[12px] text-center`}
           >
             {link.label}
           </Link>

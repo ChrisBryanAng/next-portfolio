@@ -34,7 +34,7 @@ const Hero = () => {
       </div>
       <div className="flex flex-col gap-10 lg:items-end lg:justify-end md:absolute md:bottom-0 md:bg-white md:w-[75%] lg:w-[40%] lg:h-[57%]">
         <div className="flex">
-          <p className="font-Ibarra font-bold text-[50px] md:text-[40px] lg:text-[54px] md:pt-14 text-balance tracking-[1px] leading-tight">
+          <p className="font-Ibarra font-bold text-[42px] md:text-[40px] lg:text-[54px] md:pt-14 text-balance tracking-[1px] leading-[1.1]">
             Hey, I&apos;m Alex Spencer and I love building beautiful websites
           </p>
         </div>
