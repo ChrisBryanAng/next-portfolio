@@ -1,3 +1,4 @@
+import { RefObject } from "react";
 import Image from "next/image";
 
 import AboutMeImage from "@/public/homepage/mobile/image-homepage-profile@2x.jpg";
@@ -5,9 +6,13 @@ import AboutMeImageTablet from "@/public/homepage/tablet/image-homepage-profile@
 import AboutMeImageDesktop from "@/public/homepage/desktop/image-homepage-profile@2x.jpg";
 import PrimaryButtonClean from "./PrimaryButtonClean";
 
-const AboutMe = () => {
+const AboutMe = ({ aboutRef }: { aboutRef: RefObject<HTMLDivElement> }) => {
   return (
-    <div className="flex flex-col md:flex-row mt-28 lg:mt-48 md:gap-14">
+    <div
+      id="about"
+      ref={aboutRef}
+      className="flex flex-col md:flex-row mt-28 lg:mt-48 md:gap-14"
+    >
       <div className="w-full h-[500px] block md:hidden lg:hidden">
         <Image src={AboutMeImage} alt="about-me" placeholder="blur" />
       </div>

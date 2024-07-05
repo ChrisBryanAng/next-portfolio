@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Interested from "@/components/Interested";
 import Navbar from "@/components/Navbar";
 import ProjectDetail from "@/components/ProjectDetail";
+import ProjectNavigation from "@/components/ProjectNavigation";
 
 const ProjectDetails = () => {
   const { projectId } = useParams();
@@ -24,6 +25,7 @@ const ProjectDetails = () => {
               </div>
             ))}
         </div>
+        <ProjectNavigation projects={projects} />
         <Interested />
       </div>
       <Footer />

@@ -2,10 +2,17 @@ import Image from "next/image";
 
 import DownArrows from "@/public/icons/down-arrows.svg";
 
-const PrimaryButton = ({ label }: { label: string }) => {
+const PrimaryButton = ({
+  label,
+  onClick,
+}: {
+  label: string;
+  onClick?: () => void;
+}) => {
   return (
     <button
       type="button"
+      onClick={onClick}
       className="flex text-white h-[55px] bg-primary-darkblue hover:bg-primary-cyan transition-colors duration-200"
     >
       <div className="flex items-center w-[54px] h-full justify-center p-4 bg-black/15">

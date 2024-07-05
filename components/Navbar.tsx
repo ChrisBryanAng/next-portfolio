@@ -64,7 +64,13 @@ const Navbar = () => {
         )}
       </div>
 
-      {isOpen && <NavDropdown pathname={pathname} />}
+      {isOpen && (
+        <NavDropdown
+          pathname={pathname}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
+      )}
     </div>
   );
 };

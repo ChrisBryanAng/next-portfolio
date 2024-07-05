@@ -5,7 +5,7 @@ import TabletHero from "@/public/homepage/tablet/image-homepage-hero@2x.jpg";
 import DesktopHero from "@/public/homepage/desktop/image-homepage-hero@2x.jpg";
 import PrimaryButton from "./PrimaryButton";
 
-const Hero = () => {
+const Hero = ({ scrollTo }: { scrollTo: () => void }) => {
   return (
     <div className="relative w-full flex flex-col space-y-10 mt-16 md:mt-6">
       <div className="w-full h-full flex md:hidden lg:hidden">
@@ -39,7 +39,7 @@ const Hero = () => {
           </p>
         </div>
         <div className="w-full flex">
-          <PrimaryButton label="About Me" />
+          <PrimaryButton label="About Me" onClick={scrollTo} />
         </div>
       </div>
     </div>
